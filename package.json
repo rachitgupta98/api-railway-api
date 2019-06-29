@@ -1,0 +1,26 @@
+{
+  "name": "railway-api",
+  "version": "0.1.0",
+  "description": "An API that provide all details of Train",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachitgupta98/indian-railway-api.git"
+  },
+  "keywords": [
+    "indian-railway-api",
+    "\"indian",
+    "railway\"",
+    "\"train\"",
+    "\"pnr\""
+  ],
+  "author": "Rachit Gupta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rachitgupta98/indian-railway-api/issues"
+  },
+  "homepage": "https://github.com/rachitgupta98/indian-railway-api#readme"
+}
