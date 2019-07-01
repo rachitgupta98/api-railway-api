@@ -39,4 +39,23 @@ getTrainRoute = (train_No, callback) => {
       callback(err);
     });
 };
-module.exports = { getTrain, setApiKey };
+
+//
+getTrainBtwStation = (start, end) => {
+  rp(
+    `https://api.railwayapi.com/v2/between/source/${start}/dest/${end}/apikey/${apiKey}/`
+  ).then(res => {
+    // for (let i = 1; i < data.length; i++) {
+    //   let name = data[i].split('"name":')[1];
+    //   console.log(name);
+    // }
+    let st = [];
+    let name = res.split('"trains":')[1];
+    // for (let i = 0; i < name.length; i++) {
+    //   let d = name[i].split('"travel_time":')[0];
+    //   console.log(d);
+    // }
+    console.log(name);
+  });
+};
+module.exports = { getTrainRoute, setApiKey, getTrainBtwStation };
