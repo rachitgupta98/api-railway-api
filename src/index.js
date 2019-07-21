@@ -55,7 +55,7 @@ getTrainBtwStation = (start, end) => {
     //   let d = name[i].split('"travel_time":')[0];
     //   console.log(d);
     // }
-    console.log(name);
+    callback(name);
   });
 };
 module.exports = { getTrainRoute, setApiKey, getTrainBtwStation };
