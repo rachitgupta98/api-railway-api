@@ -24,7 +24,11 @@ Get train’s route information like the list of stoppages,their locations etc.
 
 ```js
 railway.getTrainRoute("<train number>", function(err, res) {
-  //return station name, station code, schedule arrival, schedule departure.
+  if (err) {
+    //handling the error
+  } else {
+    //return station name, station code, schedule arrival, schedule departure.
+  }
 });
 ```
 
@@ -33,7 +37,29 @@ railway.getTrainRoute("<train number>", function(err, res) {
 Get all trains(numbers) running between a source station and destination.
 
 ```js
-railway.getTrainBtwStation("<source>", "<destination>", function(err, res) {});
+railway.getTrainBtwStation("<source>", "<destination>", function(err, res) {
+  if (err) {
+    //handling the error
+  } else {
+    //return the response object
+  }
+});
 ```
 
-### checkPNR , liveTrainStatus, seatAvailability etc.
+- Check PNR Status
+
+Get the current PNR Status.
+
+```js
+railway.getPnrStatus("pnrNo", function(err, res) {
+  if (err) {
+    //handling the error
+  } else {
+    //return the response object
+  }
+});
+```
+
+## Next Update will have given features....
+
+### liveTrainStatus, seatAvailability etc.
