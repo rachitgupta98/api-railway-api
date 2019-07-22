@@ -44,18 +44,32 @@ getTrainRoute = (train_No, callback) => {
 getTrainBtwStation = (start, end) => {
   rp(
     `https://api.railwayapi.com/v2/between/source/${start}/dest/${end}/apikey/${apiKey}/`
-  ).then(res => {
-    // for (let i = 1; i < data.length; i++) {
-    //   let name = data[i].split('"name":')[1];
-    //   console.log(name);
-    // }
-    let st = [];
-    let name = res.split('"trains":')[1];
-    // for (let i = 0; i < name.length; i++) {
-    //   let d = name[i].split('"travel_time":')[0];
-    //   console.log(d);
-    // }
-    callback(name);
-  });
+  )
+    .then(res => {
+      // for (let i = 1; i < data.length; i++) {
+      //   let name = data[i].split('"name":')[1];
+      //   console.log(name);
+      // }
+      let st = [];
+      let name = res.split('"trains":')[1];
+      // for (let i = 0; i < name.length; i++) {
+      //   let d = name[i].split('"travel_time":')[0];
+      //   console.log(d);
+      // }
+      callback(name);
+    })
+    .catch(err => {
+      callback(err);
+    });
+};
+
+getPnrStatus = (pnrNo, callback) => {
+  rp(`http://api.railwayapi.com/v2/pnr-status/pnr/${pnrNo}/apikey/${apiKey}/`)
+    .then(res => {
+      callback(res);
+    })
+    .catch(err => {
+      callback(err);
+    });
 };
 module.exports = { getTrainRoute, setApiKey, getTrainBtwStation };
