@@ -1,6 +1,5 @@
 # api-railway-api
-
-_An API with various functionalities for indian railways_
+This  API provides the stuff related to indian trains like PNR Status , Train Between Stations, etc. 
 
 ## Installation
 
