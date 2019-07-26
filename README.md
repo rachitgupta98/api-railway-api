@@ -1,15 +1,15 @@
 # api-railway-api
 
-_An API with various functionalities for indian railways_
+New API that provide all the information related to Indian Trains.
 
 ## Installation
 
-npm install api-railway-api
+npm install railway-api-v2 --save
 
 ## Usage
 
 ```js
-const railway = require("api-railway-api");
+const railway = require("railway-api-v2");
 ```
 
 - set API key (Don't Forget to Add)
@@ -18,16 +18,18 @@ const railway = require("api-railway-api");
 railway.setApikey("<API key>");
 ```
 
-- Train route information
+You can get the API Key by registering here https://indianrailapi.com/
 
-Get train’s route information like the list of stoppages,their locations etc.
+- Train_No information
+
+Get the train information by entering Train number.
 
 ```js
-railway.getTrainRoute("<train number>", function(err, res) {
+railway.getTrainRoute(<train number>, function(err, res) {
   if (err) {
     //handling the error
   } else {
-    //return station name, station code, schedule arrival, schedule departure.
+    //return train information
   }
 });
 ```
@@ -46,12 +48,12 @@ railway.getTrainBtwStation("<source>", "<destination>", function(err, res) {
 });
 ```
 
-- Check PNR Status
+- Check Train Live Status
 
-Get the current PNR Status.
+Get the current status of Train by entering Train_No and Date (yyyymmdd).
 
 ```js
-railway.getPnrStatus("pnrNo", function(err, res) {
+railway.getLiveTrainStatus(<Train_No>,"yyyymmdd", function(err, res) {
   if (err) {
     //handling the error
   } else {
@@ -60,6 +62,66 @@ railway.getPnrStatus("pnrNo", function(err, res) {
 });
 ```
 
-## Next Update will have given features....
+- Check Train Schedule
 
-### liveTrainStatus, seatAvailability etc.
+Get the full schedule of train from source to destination
+
+```js
+railway.getTrainSchedule(<Train_No>, function(err, res) {
+  if (err) {
+    //handling the error
+  } else {
+    //return the response object
+  }
+});
+```
+
+- Check Train Fare
+
+Get the Fare of tickets between two station of all class (GN,SL,AC)
+
+<Train_No>: Train Number.
+source : Source Station Code.
+destination: Destination Station Code.
+quota : GN/CK
+
+```js
+railway.getTrainFare( <Train_No>,"<source>","<destination>","<quota>" function(err, res) {
+  if (err) {
+    //handling the error
+  } else {
+    //return the response object
+  }
+});
+```
+
+- Check Seat Availability
+
+Train_No : Train Number.
+source : Source Station Code.
+destination: Destination Station Code.
+date : Request Date in yyyyMMdd format.
+class : Class Code Like 1A/2A/3A/SL and so on.
+Quota : Currently available only for General(GN) Quata.
+
+```js
+railway.getSeatAvailability(<Train_No>,"<source>","<destination>","<date>","<class>", function(err, res) {
+  if (err) {
+    //handling the error
+  } else {
+    //return the response object
+  }
+});
+```
+
+- Check Coach Position
+
+```js
+railway.getCoachPosition(<Train_No>, function(err, res) {
+  if (err) {
+    //handling the error
+  } else {
+    //return the response object
+  }
+});
+```
