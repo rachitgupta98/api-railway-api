@@ -1,5 +1,5 @@
 {
-  "name": "api-railway-api",
+  "name": "railway-api-v2",
   "version": "1.0.1",
   "description": "An API that provide all details of Train",
   "main": "./src/index.js",
