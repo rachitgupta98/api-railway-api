@@ -1,5 +1,5 @@
 {
-  "name": "railway-api-v2",
+  "name": "api-railway-api",
   "version": "1.0.1",
   "description": "An API that provide all details of Train",
   "main": "./src/index.js",
@@ -12,10 +12,12 @@
   },
   "keywords": [
     "indian-railway-api",
-    "\"indian",
-    "railway\"",
-    "\"train\"",
-    "\"pnr\""
+    "railway",
+    "nodeJS",
+    "expressJS",
+    "Promise",
+    "request",
+    "api"
   ],
   "author": "Rachit Gupta",
   "license": "MIT",

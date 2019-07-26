@@ -4,12 +4,12 @@ New API that provide all the information related to Indian Trains.
 
 ## Installation
 
-npm install railway-api-v2 --save
+npm install api-railway-api --save
 
 ## Usage
 
 ```js
-const railway = require("railway-api-v2");
+const railway = require("api-railway-api");
 ```
 
 - set API key (Don't Forget to Add)
