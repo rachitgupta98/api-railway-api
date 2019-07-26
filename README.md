@@ -12,7 +12,7 @@ npm install api-railway-api --save
 const railway = require("api-railway-api");
 ```
 
-- **set API key** (Don't Forget to Add)
+## - set API key (Don't Forget to Add)
 
 ```js
 railway.setApikey("<API key>");
@@ -20,7 +20,7 @@ railway.setApikey("<API key>");
 
 You can get the API Key by registering here https://indianrailapi.com/
 
-- **Train_No information**
+## - Train_No information
 
 Get the train information by entering Train number.
 
@@ -34,7 +34,7 @@ railway.getTrainRoute(<train number>, function(err, res) {
 });
 ```
 
-- **Trains between stations**
+## - Trains between stations
 
 Get all trains(numbers) running between a source station and destination.
 
@@ -48,7 +48,7 @@ railway.getTrainBtwStation("<source>", "<destination>", function(err, res) {
 });
 ```
 
-- **Check Train Live Status**
+## - Check Train Live Status
 
 Get the current status of Train by entering Train_No and Date (yyyymmdd).
 
@@ -62,7 +62,7 @@ railway.getLiveTrainStatus(<Train_No>,"yyyymmdd", function(err, res) {
 });
 ```
 
-- **Check Train Schedule**
+## - Check Train Schedule
 
 Get the full schedule of train from source to destination
 
@@ -76,14 +76,15 @@ railway.getTrainSchedule(<Train_No>, function(err, res) {
 });
 ```
 
-- **Check Train Fare**
+## - Check Train Fare
 
 Get the Fare of tickets between two station of all class (GN,SL,AC)
 
 - Train_No: Train Number.
 - source : Source Station Code.
-- destination: Destination Station Code.
-- quota : GN/CK
+
+* destination: Destination Station Code.
+* quota : GN/CK
 
 ```js
 railway.getTrainFare( <Train_No>,"<source>","<destination>","<quota>" function(err, res) {
@@ -95,7 +96,7 @@ railway.getTrainFare( <Train_No>,"<source>","<destination>","<quota>" function(e
 });
 ```
 
-- **Check Seat Availability**
+## - Check Seat Availability
 
 - Train_No : Train Number.
 - source : Source Station Code.
@@ -114,7 +115,7 @@ railway.getSeatAvailability(<Train_No>,"<source>","<destination>","<date>","<cla
 });
 ```
 
-- **Check Coach Position**
+## - Check Coach Position
 
 ```js
 railway.getCoachPosition(<Train_No>, function(err, res) {
