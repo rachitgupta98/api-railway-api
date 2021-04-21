@@ -1,4 +1,5 @@
 # api-railway-api
+[![NPM Downloads](https://img.shields.io/npm/dt/api-railway-api.svg?style=flat)](https://www.npmjs.com/package/api-railway-api?minimal=true)
 
 New API that provide all the information related to Indian Trains.
 
